@@ -1,11 +1,18 @@
-## input
+# input
 ```
 hello
 world
 third line
 
 ```
-## Test5.ohm
+# Video
+
+![[test-5-a.mp4]]
+
+![[test-5-b.mp4]]
+
+
+# Test5.ohm
 ```
 test5 {
 main = ruleany+
@@ -13,17 +20,17 @@ ruleany = any
 }
 ```
 
-## Test5.glue
+# Test5.glue
 ```
 main [@ruleany] = [[<elided>]]
 ruleany [c] = [[${c}]]
 ```
 
-## Command
+# Command
 ```
 prep '.' '$' test5.ohm test5.glue --stop=1 --input=test5
 ```
-## Reading
+# Reading
 ![[tests-test 5.svg]]
 Pattern matching matches anything (`.`) and terminates at EOF (`$`).
 

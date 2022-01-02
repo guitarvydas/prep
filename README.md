@@ -2,6 +2,8 @@
 
 Source code transpiler that works on blocks of text bracketed by REGEXPs, using PEG to transpile the blocks.
 
+[The documentation contains videos.  For now: pull the repo, view documentation in Obsidian.]
+
 # Usage
 
 prep 're-begin' 're-terminate' ohm-spec glue-spec \<in \>out

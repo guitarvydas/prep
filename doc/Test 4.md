@@ -2,7 +2,13 @@
 ```
 abababc
 ```
-## Test2.ohm
+# Video
+
+![[test-4-a.mp4]]
+
+![[test-4-b.mp4]]
+
+# Test2.ohm
 (test4 reuses test2.ohm)
 ```
 test2 {
@@ -11,18 +17,18 @@ rulea = "ab"
 }
 ```
 
-## Test2.glue
+# Test2.glue
 (test4 reusues test2.glue)
 ```
 main [rulea] = [[*]]
 rulea [twoc] = [[${twoc}]]
 ```
 
-## Command
+# Command
 ```
 prep 'ab' 'ab|c' test2.ohm test2.glue --input=test4
 ```
-## Reading
+# Reading
 ![[tests-test 4.svg]]
 Pattern matching and formatting is similar to test3, except that it happens three times, with the result `***c`.
 

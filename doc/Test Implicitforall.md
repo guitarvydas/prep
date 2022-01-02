@@ -21,7 +21,7 @@ To get the desired effect, we wanted to use PROLOG pattern-matching syntax, but,
 
 In this case, the match is easy and the needed extra detail is wrapped by the .glue file.
 
-## input
+# input
 markdown file `testimplicitforall`
 ```
 # layer kind
@@ -43,7 +43,7 @@ diagram_fact(cell,X,_)
 
 
 ```
-## Implicitforall.ohm
+# Implicitforall.ohm
 The rule `main` is the only - Architecturally - significant line.  The rest of the lines in the grammar are for support and non-Architectural, lower-level details.
 
 The rules in this test were written as lexical rules (lower-case first letter in the names).
@@ -76,7 +76,7 @@ implicitforall {
 
 ```
 
-## Implicitforall.glue
+# Implicitforall.glue
 ```
 main [ @sharps @ws kquery @ws2 @nl Match @Ensures] = [[${sharps}${ws}~${ws2}${Match}${Ensures}]]
 
@@ -97,11 +97,11 @@ ws  [c] = [[${c}]]
 
 ```
 
-## Command
+# Command
 ```
 prep '#+ query' '#+ ' implicitforall.ohm implicitforall.glue --input=testimplicitforall --support=${cdir}/support.js >temp
 ```
-## Reading
+# Reading
 The pattern-matcher matches one PROLOG clause, then more PROLOG clauses.
 
 The first clause is taken to be the "forall" clause.  The rest of the clauses are wrapped in detailed syntax that causes non-silent failures, achieving the desired result (in layers).

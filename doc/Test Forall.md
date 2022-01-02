@@ -4,7 +4,20 @@ In this test case, a block starts with one-or-more (`+`) octothorpes (`#`) follo
 The block ends with one-or-more octothorpes.
 
 The intent is to isolate the `## forall ...` block and to preprocess it using `forall.ohm` and `forall.glue`, leaving the rest of the text alone (not processed).
-## input
+# Video
+![[forall-a.mp4]]
+![[forall-b.mp4]]
+![[forall-a.mp4]]
+![[forall-c.mp4]]
+![[forall-d.mp4]]
+![[forall-e.mp4]]
+![[forall-f.mp4]]
+![[forall-g.mp4]]
+![[forall-h.mp4]]
+![[forall-i.mp4]]
+![[forall-j.mp4]]
+
+# input
 markdown file `testforall`
 ```
 # layer kind
@@ -30,7 +43,7 @@ markdown file `testforall`
   das_fact(direction,${ID},${Direction}).
 
 ```
-## Forall.ohm
+# Forall.ohm
 ```
 forall {
   Main = sharp+ "forall" ident "as" predicate ws* nl* ident "=" "cond" CondClause+ CondElse
@@ -59,7 +72,7 @@ forall {
 }
 ```
 
-## Forall.glue
+# Forall.glue
 ```
 Main [@sharps kforall ident kas predicate @ws @nl ident2 keq kcond @CondClauses CondElse]
   = {{ support.pushIdent (_ident2._glue ()); }}
@@ -88,11 +101,11 @@ notPAREN [c] = [[${c}]]
   ws [c] = [[${c}]]
 ```
 
-## Command
+# Command
 ```
 prep '#+ forall' '#+ ' forall.ohm forall.glue --input=testforall --support=${cdir}/support.js
 ```
-## Reading
+# Reading
 The block is delimited by the REGEXs
 - '#+ forall'
 - '#+ '
