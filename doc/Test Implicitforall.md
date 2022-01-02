@@ -43,6 +43,8 @@ diagram_fact(cell,X,_)
 
 
 ```
+
+![[implicit-1.mp4]]
 # Implicitforall.ohm
 The rule `main` is the only - Architecturally - significant line.  The rest of the lines in the grammar are for support and non-Architectural, lower-level details.
 
@@ -76,6 +78,10 @@ implicitforall {
 
 ```
 
+![[implicit-b.mp4]]
+
+![[implicit-c.mp4]]
+
 # Implicitforall.glue
 ```
 main [ @sharps @ws kquery @ws2 @nl Match @Ensures] = [[${sharps}${ws}~${ws2}${Match}${Ensures}]]
@@ -97,10 +103,19 @@ ws  [c] = [[${c}]]
 
 ```
 
+![[implicit-e.mp4]]
+
+![[implicit-d.mp4]]
+
 # Command
 ```
 prep '#+ query' '#+ ' implicitforall.ohm implicitforall.glue --input=testimplicitforall --support=${cdir}/support.js >temp
 ```
+
+
+![[implicit-f.mp4]]
+(When I say "numbers" in the above video, I mean "octothorpes"...)
+
 # Reading
 The pattern-matcher matches one PROLOG clause, then more PROLOG clauses.
 
