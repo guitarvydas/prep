@@ -5,6 +5,11 @@
 - replacement=\*   // a is replaced by \*
 - result=\*c
 
+# Video
+![[test-1.mp4]]
+
+![[test-1-b.mp4]]
+
 ## Test1.ohm
 ```
 test1 {
