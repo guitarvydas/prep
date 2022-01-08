@@ -4,7 +4,7 @@
   commentToNL [line] = [[]]
   Statement  [line] = [[${line}]]
 
-  VarStatement [kvar ident nl] = [[vvv ${ident}${nl}]]
+  VarStatement [kvar ident nl] = [[]]
 
   ident [identFirst @identRest] = [[${identFirst}${identRest}]]
   idFirst [c] = [[${c}]]
