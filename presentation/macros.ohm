@@ -6,13 +6,16 @@ G {
     | any                   -- any
 
   Macro = 
-    | tIdentMacro "(" ListOf<ident, ","> ")" -- ident
+    | tIdentMacro "(" CommaSeparatedIdent* ident? ")" -- ident
     | tAnythingMacro "(" anystuff* ")"       -- anything
 
   anystuff =
     | "(" anystuff* ")" -- nested
     | ~"(" ~")" any     -- flat
 
+
+  CommaSeparatedIdent = ident ","
+  
   ident = identFirst identRest*
   identFirst = "A" .. "Z" | "a" .. "z" | "_" 
   identRest = "0" .. "9" | identFirst
