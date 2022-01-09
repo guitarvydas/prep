@@ -17,12 +17,13 @@ Ohm is better than PEG because Ohm separates grammar from semantics.
 ## Names are Cheap => Syntax is Cheap
 FP teaches us that names are superfluous.
 
-All syntax is superfluous (not just names).
+All syntax is superfluous - not just names.
 
-Projectional Editing strips syntax, leaving only the meat.  PE allows multiple syntaxes for the same meat.
+PE (Projectional Editing) strips syntax, leaving only the meat.  PE allows multiple syntaxes for the same meat.
 ## Learn From Lisp (Racket) Macros
+Lisp taught us what makes a good macro DSL and how to expand macros.
 - recursive expansion
-- tag syntax objects with File and Line numbers (etc.) 
+- tag syntax objects with File and Line numbers (etc.) (Scheme, Racket)
 # Toolbox Language
 - Machine Readable (reduced emphasis on human-readability)
 - kitchen sink - supports any kind of paradigm
