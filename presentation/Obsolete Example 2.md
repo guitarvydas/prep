@@ -1,4 +1,4 @@
-# Example 2
+# Obsolete Example 2
 Let's rewrite the grammar to use 2 kinds of tokens:
 1. identifiers
 2. separators (any character the is not allowed in identifiers, e.g. parentheses, etc.)

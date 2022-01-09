@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "presentation/Example 2.md",
+            "file": "Example 2.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "presentation/Example 2.md",
+                "file": "Example 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "22e3770923c39989",
   "lastOpenFiles": [
-    "presentation/Example 2.md",
+    "Example 2.md",
     "presentation/PREP - Macros Beyond Lisp.md",
+    "presentation/Obsolete Example 2.md",
     "presentation/PREP Syntax - Pattern Matching Spec - Grammar.md",
     "presentation/Example 1.md",
     "presentation/Other Technologies.md",
     "presentation/PREP Syntax - REGEX.md",
     "presentation/PREP Syntax - Command Line.md",
     "presentation/Syntax is Cheap.md",
-    "README.md",
-    "doc/Test Implicitforall.md"
+    "README.md"
   ]
 }

@@ -27,6 +27,7 @@ Very simple example to show the basics:
 ## Example 2 - Macros
 Macros (textual):
 [[Example 2]]
+[[Obsolete Example 2]]
 
 # Status
 - experimental
