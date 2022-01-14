@@ -319,14 +319,14 @@ function splitOnSeparators (triggerSep, endSep, s) {
 
 	let  middleText;
 	let restText;
-	if (argv.inclusive ) {
-	    // include endSepText in block
-	    middleText = beginSepText + middleEndSepRestText.substring (0, indexEndEnd) + endSepText;
-	    restText = middleEndSepRestText.substring (indexEndEnd + endSepText.length);
-	} else {
+	if (argv.exclusive ) {
 	    // endSepText is not part of block
 	    middleText = beginSepText + middleEndSepRestText.substring (0, indexEndEnd);
 	    restText = endSepText + middleEndSepRestText.substring (indexEndEnd + endSepText.length);
+	} else {
+	    // include endSepText in block
+	    middleText = beginSepText + middleEndSepRestText.substring (0, indexEndEnd) + endSepText;
+	    restText = middleEndSepRestText.substring (indexEndEnd + endSepText.length);
 	}
 	return { front: frontText, middle: middleText, rest: restText };
     } else {
