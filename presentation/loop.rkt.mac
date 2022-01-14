@@ -1,6 +1,6 @@
 (define (test x)
     loop
-      (incf x) = x + 1
+      (incf x)
       (format *standard-output* "top of loop ~a~%' x)
       exit when (= x 10)
       (format *standard-output* "loop again~%")
