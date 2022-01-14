@@ -14,7 +14,11 @@ prep 're-begin' 're-terminate' ohm-spec glue-spec --support=fname [...]
 
 prep 're-begin' 're-terminate' ohm-spec glue-spec --cycles=1 [...]
 
+prep 're-begin' 're-terminate' ohm-spec glue-spec --inclusive [...]
+
 Expansion is recursive except when --cycles is specified. When --cycles is specified, an internal counter is initialized to 0 and counts upward +1 for every expansion cycle. Expansion terminates when (counter >= stop). 
+
+The option ``-inclusive`` causes `prep` to include the terminator match in the code blocks
 
 See `run.bash` 
 
