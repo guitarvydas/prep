@@ -11,7 +11,6 @@ var stop;
 
 
 var viewGeneratedCode = false;
-var tracing = false;
 var traceDepth;
 
 var ohm = require ('ohm-js');
@@ -212,7 +211,7 @@ function traceSpaces () {
 }
 
 function _ruleEnter (ruleName) {
-    if (tracing) {
+    if (argv.trace) {
 	traceDepth += 1;
 	traceSpaces ();
 	process.stderr.write("enter: ");
@@ -222,7 +221,7 @@ function _ruleEnter (ruleName) {
 }
 
 function _ruleExit (ruleName) {
-    if (tracing) {
+    if (argv.trace) {
 	traceSpaces ();
 	traceDepth -= 1;
 	process.stderr.write("exit: "); 
@@ -262,6 +261,16 @@ function execTranspiler (source, grammar, semantics, errorMessage) {
 }
 
 function internal_stranspile (sourceString, grammarFileName, glueFileName, errorMessage) {
+    if (grammarFileName == undefined) {
+	console.error ("prep says: grammarFileName is undefined (probably something to do with argv)");
+	console.error (argv);
+	throw "argument error";
+    }
+    if (glueFileName == undefined) {
+	console.error ("prep says: glueFileName is undefined (probably something to do with argv)");
+	console.error (argv);
+	throw "argument error";
+    }
     var grammar = fs.readFileSync (grammarFileName, 'utf-8');
     var glue = fs.readFileSync (glueFileName, 'utf-8');
     var returnString = execTranspiler (sourceString, grammar, glue, errorMessage);
@@ -272,8 +281,9 @@ function internal_stranspile (sourceString, grammarFileName, glueFileName, error
 
 
 function dump (announce, s) {
-    if (argv.split) {
+    if (argv.show) {
 	console.error ();
+	console.error (`block length = ${s.length}`);
 	console.error (announce);
 	console.error (s);
 	console.error (announce);
@@ -309,7 +319,7 @@ function splitOnSeparators (triggerSep, endSep, s) {
 	if (endMatch) {
 	    ;
 	} else {
-	    dump ("thus far:",middleEndSepRestText);
+	    // dump ("thus far:",middleEndSepRestText);
 	    errormsg = `cannot find end separator ${endSep}`;
 	    throw errormsg;
 	}
@@ -344,7 +354,7 @@ function pdebug (s) {
 }
 
 function expandAll (s, triggerRE, endRE, grammarFileName, glueFileName, message) {
-    dump ("*** expandAll ***", s);
+    // dump ("*** before ***", s);
     if (s === undefined) {
 	return s;
     } else {
@@ -354,7 +364,7 @@ function expandAll (s, triggerRE, endRE, grammarFileName, glueFileName, message)
 	if (middle === undefined || middle === '') {
 	    return front;
 	} else {
-	    dump ("*** expansion ***", middle);
+	    // dump ("*** expansion ***", middle);
 	    var expandedText = expand (middle, grammarFileName, glueFileName, message);
 	    cycles += 1;
 	    if (stop & (cycles >= stop)) {
@@ -378,6 +388,12 @@ function pre (allchars) {
     var grammarFileName = argv._[2];
     var glueFileName = argv._[3];
 
+    if (argv.show) {
+	console.error ('begin and end regexps');
+	console.error (reTrigger);
+	console.error (reEnd);
+    }
+
     if (argv.support) {
 	support = require (argv.support);
 	if (support.setArgv) {
@@ -385,11 +401,7 @@ function pre (allchars) {
 	}
     }
     if (argv.trace) {
-	var traceFlag = true;
-	if (traceFlag === 't') {
-	    tracing = true;
-	    traceDepth = 0;
-	}
+	traceDepth = 0;
     }
 
 
@@ -416,6 +428,7 @@ function main () {
     } else {
 	viewGeneratedCode = false;
     }
+
     var allchars = fs.readFileSync (fname, 'utf-8');
     var result = pre (allchars);
     emit (result);

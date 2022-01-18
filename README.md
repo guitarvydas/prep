@@ -14,11 +14,19 @@ prep 're-begin' 're-terminate' ohm-spec glue-spec --support=fname [...]
 
 prep 're-begin' 're-terminate' ohm-spec glue-spec --cycles=1 [...]
 
-prep 're-begin' 're-terminate' ohm-spec glue-spec --inclusive [...]
+prep 're-begin' 're-terminate' ohm-spec glue-spec --exclusive [...]
+
+prep 're-begin' 're-terminate' ohm-spec glue-spec --show [...]
+
+prep 're-begin' 're-terminate' ohm-spec glue-spec --trace [...]
 
 Expansion is recursive except when --cycles is specified. When --cycles is specified, an internal counter is initialized to 0 and counts upward +1 for every expansion cycle. Expansion terminates when (counter >= stop). 
 
-The option ``-exclusive`` causes `prep` to exclude the terminator match from the code blocks
+The option `--exclusive` causes `prep` to exclude the terminator match from the code blocks
+
+The option `--show` causes `prep` to show text blocks before and after expansion
+
+The option `--trace` causes `prep` to show entry and exit of rules.
 
 See `run.bash` 
 
