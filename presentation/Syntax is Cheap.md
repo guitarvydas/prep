@@ -11,6 +11,10 @@ Character-based macros
 	- not list-only macros
 	- PEG (=> Ohm-JS)
 
+Lisp provides powerful macros, but using a list-only syntax.
+
+PEG provides lisp-like power using a character-based syntax.
+
 PEG libraries are available for many languages.
 
 Ohm is better than PEG because Ohm separates grammar from semantics.
@@ -29,7 +33,7 @@ Lisp taught us what makes a good macro DSL and how to expand macros.
 - kitchen sink - supports any kind of paradigm
 - regular syntax - normalized syntax 
 	- easy to read (by machine)
-	- easy to write (by machine))
+	- easy to write (by machine)
 
 
 ## Original Toolbox
@@ -53,7 +57,7 @@ Lisp
 - normalized syntax - Lisp is an *expression language* (every clause results in a value)
 - dynamic first
 - REPL
-- debugging (well developed over decades)
+- debugging (debuggers well developed over decades)
 
 ## Wannabes
 ### Javascript
@@ -61,6 +65,7 @@ Lisp
 - supports first-class functions
 - easy object creation ("{...}")
 - too much syntax
+- not an expression language ; needs `return` statements
 - dynamic
 - protypal inheritance (more general (toolbox-y) than class-based inheritance)
 ## Python
@@ -70,8 +75,13 @@ Lisp
 - supports first-class functions
 ## Relational Programming
 - restricted to a single paradigm (Relational)
+- wonderful for pattern-matching higher-level concepts (aka *inference*)
+- syntax developed for inferencing
+- can support and query triples
+- the underlying *mechanism* for relational programming is *exhaustive search* (PROLOG and miniKanren achieve exhaustive search in different ways) (see below)
 ## OOP
 - restricted to a single paradigm (OO)
+- the underlying *mechanism* for "message sending" is usually implemented as CALL-RETURN (produces implicit dependencies)
 ## Haskell
 - restricted to a single paradigm (functions, synchronous-only)
 - too much syntax
@@ -85,14 +95,29 @@ Lisp
 
 # Important Paradigms
 ## Functional
+- *everything-is-a-function* syntax is a normalized syntax
+- conflated with isolation and explicit-iness (see below)
 ## OO
-## Relational
+- *everything-is-an-object-with-state*
+- suffers from being unwittingly implemented in a synchronous paradigm using synchronous languages
+- add multi-tasking => Actors
 ## Exhaustive Search
+- Query that returns all possible answers
+- fundamental mechanism of PROLOG
+	- but, PROLOG added optimizations, since it used backtracking, which was expensive in 1950's technology
+	- see [Nils Holm's PROLOG Control in 6 Slides](https://www.t3x.org/bits/prolog6.html)
+- miniKanren accomplishes exhaustive search without using backtracking
 ## Synchrony
+- a programming paradigm that is useful for building calculators
+- it was originally thought that computers were just calculators (for calculating ballistics)
+- computers also can perform sequencing, which does not fit easily into the synchronous paradigm
 - rendezvous
-## Asynchrony
+## Asynchrony![[layer 0 Screen Shot 2022-01-07 at 3.20.53 PM.png]]
 - thread libraries are band-aids ; glue-on asynchrony
 - enables isolation (> encapsultion) => black boxes
+- fundamental mechanism for distributed
+- cannot use stack (lest you send the stack down a single wire)
+- often confused with parallelism (parallelism is an optimization, concurrency is a paradigm)
 ## Diagrams
 - break free of text-only representations
 	- reduce accidental complexity of forcing solutions into text-only cubby-holes
@@ -137,3 +162,5 @@ not Loops
 ## Data Flow
 - 1/2 of Turing Machine
 - like the magnetic tape in a tape recorder
+
+## Explicit-iness
