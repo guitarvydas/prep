@@ -7,11 +7,9 @@
         "id": "22e3770923c39989",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "video",
           "state": {
-            "file": "presentation/Example3 A New Kind of Loop.md",
-            "mode": "source",
-            "source": true
+            "file": "video1.mp4"
           }
         }
       }
@@ -69,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "presentation/Example3 A New Kind of Loop.md",
+                "file": "video1.mp4",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +86,15 @@
   },
   "active": "22e3770923c39989",
   "lastOpenFiles": [
+    "video1.mp4",
+    "presentation/PREP Syntax - Command Line.md",
+    "presentation/PREP - Macros Beyond Lisp.md",
+    "presentation/Example 1.md",
+    "presentation/drawio-grammar.svg",
+    "README.md",
     "presentation/Example3 A New Kind of Loop.md",
     "presentation/Example 2.md",
     "presentation/Example 4 Markdown for Programming.md",
-    "presentation/PREP - Macros Beyond Lisp.md",
-    "presentation/Obsolete Example 2.md",
-    "presentation/PREP Syntax - Pattern Matching Spec - Grammar.md",
-    "presentation/Example 1.md",
-    "presentation/Other Technologies.md",
-    "presentation/PREP Syntax - REGEX.md",
-    "presentation/PREP Syntax - Command Line.md"
+    "presentation/Obsolete Example 2.md"
   ]
 }
