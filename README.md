@@ -32,11 +32,16 @@ See `run.bash`
 
 # Examples
 
-See `run.bash`
+See `run.bash`.
 
-```
-ac
-```
+![[doc/all-tests.mp4]]
+![[doc/Test1]]
+![[doc/Test2]]
+![[doc/Test 3]]
+![[doc/Test 4]]
+![[doc/Test 5]]
+![[doc/Test Forall]]
+![[doc/Test Implicitforall]]
 
 # Recursive Expansion
 N.B. The expanding is done recursively.  
