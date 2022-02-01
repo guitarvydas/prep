@@ -455,5 +455,6 @@ function getargv (s) {
 try {
     main ();
 } catch (err) {
+    console.error (err.message);
 }
 
