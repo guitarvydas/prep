@@ -174,6 +174,7 @@ function ohm_parse (grammar, text, errorMessage) {
 	// console.error ("/" + text + "/");
 	// or ... console.error (text);
 	var pos = cst._rightmostFailurePosition;
+	console.error ("FAIL: at position " + pos.toString () + " " + errorMessage);
 	throw ("FAIL: at position " + pos.toString () + " " + errorMessage);
     }
 }
@@ -188,6 +189,7 @@ function transpiler (scnText, grammar, semOperation, semanticsObject, errorMessa
 	    let result = sem (cst)[semOperation]();
 	    return result;
 	} else {
+	    console.error ("fail: " + " " + errorMessage);
 	    throw ("fail: " + " " + errorMessage);
 	}
     } catch (err) {
@@ -254,8 +256,8 @@ function execTranspiler (source, grammar, semantics, errorMessage) {
 	    throw err;
 	}
     } catch (err) {
-	console.error ('source:');
-	console.error (source.replace (/[\n\t ]/g,'.'));
+	//console.error ('source:');
+	//console.error (source.replace (/[\n\t ]/g,'.'));
 	throw err;
     }
 }
@@ -264,11 +266,13 @@ function internal_stranspile (sourceString, grammarFileName, glueFileName, error
     if (grammarFileName == undefined) {
 	console.error ("prep says: grammarFileName is undefined (probably something to do with argv)");
 	console.error (argv);
+	console.error ("argument error");
 	throw "argument error";
     }
     if (glueFileName == undefined) {
 	console.error ("prep says: glueFileName is undefined (probably something to do with argv)");
 	console.error (argv);
+	console.error ("argument error");
 	throw "argument error";
     }
     var grammar = fs.readFileSync (grammarFileName, 'utf-8');
@@ -321,6 +325,7 @@ function splitOnSeparators (triggerSep, endSep, s) {
 	} else {
 	    // dump ("thus far:",middleEndSepRestText);
 	    errormsg = `cannot find end separator ${endSep}`;
+	    console.error (errormsg);
 	    throw errormsg;
 	}
 
@@ -374,6 +379,7 @@ function expandAll (s, triggerRE, endRE, grammarFileName, glueFileName, message)
 		    console.error ('expand made no changes');
 		    console.error (middle.substring (0,30));
 		    console.error (expandedText.substring (0,30));
+		    console.error( 'expand made no changes');
 		    throw 'expand made no changes';
 		}
 		return front + expandAll (expandedText + rest, triggerRE, endRE, grammarFileName, glueFileName, message);
@@ -446,5 +452,8 @@ function getargv (s) {
     }
 }
 
-main ();
+try {
+    main ();
+} catch (err) {
+}
 
