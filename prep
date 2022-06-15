@@ -182,7 +182,9 @@ function ohm_parse (maybeMultipleGrammars, grammar, text, errorMessage) {
 	// console.error ("/" + text + "/");
 	// or ... 
 	if (argv.errorview) {
-	    console.error (text);
+	    console.error (parser.trace (text).toString ());
+	    console.error (text.length);
+	    console.error ("/" + text + "/");
 	}
 	var pos = cst._rightmostFailurePosition;
 	throw ("FAIL: at position " + pos.toString () + " " + errorMessage);

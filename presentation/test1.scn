@@ -1,6 +1,0 @@
-# layer 0
-  var x
-# layer 1
-  var y
-  y = x
-  print (x)

@@ -1,9 +1,0 @@
-  Main [@octothorpe commentToNL @statement]
-    = [[${octothorpe}${commentToNL}${statement}]]
-  octothorpe [kOctothorpe] = [[${kOctothorpe}]]
-  commentToNL [line] = [[${line}]]
-  statement  [line] = [[${line}]]
-
-  line [@nonNLchar nl] = [[${nonNLchar}${nl}]]
-  nl [kNL] = [[${kNL}]]
-  nonNLchar [any] = [[${any}]]

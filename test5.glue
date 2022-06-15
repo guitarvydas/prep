@@ -1,2 +1,0 @@
-main [@ruleany] = [[<elided>]]
-ruleany [c] = [[${c}]]
